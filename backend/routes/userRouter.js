@@ -74,17 +74,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// router.get('/profile', restricted, async (req, res) => {
-//   try {
-//     const user = await Users.findById(req.user.id);
-//     if (!user) return res.status(404).json({ message: 'User not found' });
-
-//     const safeUser = { id: user.id, name: user.name, partner_number: user.partner_number };
-//     res.json(safeUser);
-//   } catch (err) {
-//     res.status(500).json({ message: 'Server error', error: err.message });
-//   }
-// });
 
 
 router.get('/profile', restricted, async (req, res) => {
