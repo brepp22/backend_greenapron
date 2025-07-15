@@ -13,6 +13,7 @@ exports.up = function(knex) {
       table.string('partner_number').notNullable().unique();  
       table.string('password').notNullable(); 
       table.string('role').notNullable();
+      table.string('photo');
       table.timestamp('created_at').defaultTo(knex.fn.now());  
     });
   };
