@@ -14,7 +14,8 @@ exports.seed = async function(knex) {
       name: 'John Doe',
       partner_number: '3344556',
       role: 'Barista',
-      password: await bcrypt.hash('starbucks123', 8)
+      password: await bcrypt.hash('starbucks123', 8),
+      photo: 'https://as1.ftcdn.net/v2/jpg/02/78/71/36/1000_F_278713685_FS8nRZMjBFC6viFGmKvozkxqwdQ8zNE4.jpg'
     },
     {
       name: 'Jane Smith',
