@@ -4,8 +4,8 @@ const db = require('../db');
 
 function getAllMessages(limit=3) {
   let query = db('messages')
-    .join('users', 'messages.person_id', '=', 'users.id') 
-    .select('messages.id', 'messages.text', 'messages.created_at', 'users.name') 
+    .join('users', 'messages.author_id', '=', 'users.id') 
+    .select('messages.id', 'messages.text', 'messages.created_at', 'users.name as from_user') 
     .orderBy('messages.created_at', 'desc');
 
     if(limit !== 'all'){
