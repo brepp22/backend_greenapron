@@ -101,6 +101,8 @@ router.get('/profile', restricted, async (req, res) => {
       id: user.id,
       name: user.name,
       partner_number: user.partner_number,
+      role: user.role,
+      photo: user.photo,
       comments_received: comments
     };
 

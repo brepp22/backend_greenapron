@@ -15,7 +15,7 @@ exports.seed = async function(knex) {
       partner_number: '3344556',
       role: 'Barista',
       password: await bcrypt.hash('starbucks123', 8),
-      photo: 'https://as1.ftcdn.net/v2/jpg/02/78/71/36/1000_F_278713685_FS8nRZMjBFC6viFGmKvozkxqwdQ8zNE4.jpg'
+      photo: 'https://tchibo.us/cdn/shop/articles/barista.jpg?crop=center&height=1200&v=1689929314&width=1200'
     },
     {
       name: 'Jane Smith',
