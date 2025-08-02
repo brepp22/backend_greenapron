@@ -14,6 +14,7 @@ exports.up = function(knex) {
       table.string('password').notNullable(); 
       table.string('role').notNullable();
       table.string('photo');
+      table.text('bio');
       table.timestamp('created_at').defaultTo(knex.fn.now());  
     });
   };
