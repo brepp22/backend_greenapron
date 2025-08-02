@@ -113,6 +113,30 @@ router.get('/profile', restricted, async (req, res) => {
   }
 });
 
+router.put('/profile', restricted, async (req, res) => {
+  const userId = req.user.id;
+  const { photo , bio } = req.body;
+
+  if(!photo && !bio){
+    return res.status(400).json({message: 'Nothing to Update'});
+  }
+
+  try {
+    const updatedUser = await Users.updateUserProfile(userId, {photo, bio});
+    res.json({
+      id:updatedUser.id,
+      name: updatedUser.name, 
+      partner_number: updatedUser.partner_number,
+      role:updatedUser.role,
+      photo: updatedUser.photo,
+      bio: updatedUser.bio,
+    });
+  }catch(err){
+    console.error(err);
+    res.status(500).json({message: 'Failed to update profile', error:err.message});
+  }
+});
+
 
 module.exports = router;
 

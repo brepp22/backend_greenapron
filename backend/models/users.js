@@ -19,9 +19,17 @@ function findById(id) {
   return db('users').where({ id }).first();
 }
 
+async function updateUserProfile(id, updates) {
+  return db('users')
+    .where({id})
+    .update(updates)
+    .then(() => findById(id));
+}
+
 module.exports = {
   createUser,
   findByPartnerNumber,
   getAllUsers,
-  findById 
+  findById ,
+  updateUserProfile
 };
