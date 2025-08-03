@@ -13,7 +13,7 @@ const db = require('./db')
 
 app.use(cors({
   //origin: 'http://localhost:3000', 
-  methods: ['GET', 'POST', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
